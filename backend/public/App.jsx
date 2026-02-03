@@ -25,7 +25,7 @@ function App() {
     const{title, description} = e.target.elements
     console.log(title.value, description.value)
 
-    axios.post('http://localhost:3000/note', {
+    axios.post('https://note-application-lz2o.onrender.com/note', {
       title: title.value,
       description: description.value
     })
@@ -37,7 +37,7 @@ function App() {
 
   function handleDeleteNote(noteId){
     console.log("delete", noteId)
-    axios.delete(`http://localhost:3000/note/${noteId}`)
+    axios.delete(`https://note-application-lz2o.onrender.com/note/${noteId}`)
       .then(res=>{
         console.log(res.data)
         fetchNotes()
@@ -47,10 +47,10 @@ function App() {
   function handleUpdateNote(noteId){
 
     console.log("update", noteId)
-    axios.patch(`http://localhost:3000/note/${noteId}`)
+    axios.patch(`https://note-application-lz2o.onrender.com/note/${noteId}`)
     const newDescription = prompt("Enter new description:")
     if(newDescription){
-      axios.patch(`http://localhost:3000/note/${noteId}`, {
+      axios.patch(`https://note-application-lz2o.onrender.com/note/${noteId}`, {
         description: newDescription
       })
       .then(res=>{
