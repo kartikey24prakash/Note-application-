@@ -11,7 +11,7 @@ function App() {
   ])
 
   function fetchNotes() {
-    axios.get('http://localhost:3000/note')
+    axios.get('https://note-application-lz2o.onrender.com/note')
       .then((res) => {
         setNotes(res.data)
       })
